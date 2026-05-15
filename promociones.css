@@ -1,0 +1,109 @@
+/* promociones.css */
+/* ===== ESTILOS PARA LISTA DE PROMOCIONES (FORMATO TARJETAS LLAMATIVAS) ===== */
+
+/* Contenedor Flexbox para crear una cuadrícula de tarjetas */
+#promociones ul {
+    list-style-type: none;
+    /* Quitamos las viñetas por defecto */
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    /* Activamos Flexbox para diseño responsivo */
+    flex-wrap: wrap;
+    /* Permite que pasen a otra línea si la pantalla es chica */
+    gap: 20px;
+    /* Separación entre las tarjetas */
+    justify-content: center;
+}
+
+/* Tarjetas individuales de promociones */
+#promociones ul li {
+    background: linear-gradient(135deg, #e25822, #b8330e);
+    /* Degradado vibrante color naranja/rojo teja */
+    color: #ffffff;
+    /* Texto blanco para máximo contraste */
+    flex: 1;
+    /* Permite que las tarjetas compartan el mismo ancho */
+    min-width: 250px;
+    /* Asegura que no sean demasiado delgadas en celular */
+    padding: 30px 20px;
+    border-radius: 15px;
+    /* Bordes redondeados muy modernos */
+    text-align: center;
+    /* Centra el texto de la oferta */
+    font-size: 1.15rem;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(226, 88, 34, 0.3);
+    /* Sombra que emite un "resplandor" del mismo color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    /* Apila el icono sobre el texto */
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    /* Pequeño borde brillante */
+}
+
+/* Efecto hover interactivo súper llamativo */
+#promociones ul li:hover {
+    transform: translateY(-8px) scale(1.02);
+    /* Se eleva y crece un poquito */
+    box-shadow: 0 12px 25px rgba(226, 88, 34, 0.5);
+    /* La sombra se intensifica */
+    color: #fceee9;
+    /* Suaviza ligerísimamente el color del texto */
+}
+
+/* Pseudo-elementos para insertar iconos gigantes divertidos antes del texto de cada promoción */
+#promociones ul li:nth-child(1)::before {
+    content: "🏷️";
+    font-size: 3rem;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 2px 4px rgba(16, 34, 174, 0.2));
+}
+
+#promociones ul li:nth-child(2)::before {
+    content: "🍹";
+    font-size: 3rem;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+#promociones ul li:nth-child(3)::before {
+    content: "🤩";
+    font-size: 3rem;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Animación CSS3 Continua: Latido (Para la última promoción, para destacar el 2x1) */
+@keyframes latido {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Modificamos la tarjeta del postre para que sea espectacularmente distinta y palpite */
+#promociones ul li:nth-child(3) {
+    animation: latido 2s infinite;
+    /* Efecto de palpitación activo siempre */
+    background: linear-gradient(135deg, #c99a2e, #a3791d);
+    /* Degradado Dorado Brillante */
+    box-shadow: 0 8px 20px rgba(201, 154, 46, 0.4);
+}
+
+#promociones ul li:nth-child(3):hover {
+    animation: none;
+    /* Detiene la palpitación al hacer hover */
+    transform: translateY(-8px) scale(1.05);
+    /* Y usa la elevación estándar */
+    box-shadow: 0 12px 25px rgba(201, 154, 46, 0.6);
+}

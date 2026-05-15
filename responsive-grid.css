@@ -1,0 +1,680 @@
+@charset "UTF-8";
+/* ==========================================================================
+   HOJA DE ESTILOS PRINCIPAL: RESPONSIVE Y CSS GRID
+   Restaurante Sabores de Chile - Semana 7
+   ========================================================================== */
+
+/* ===== ESTILO GENERAL DEL SITIO ===== */
+html {
+    scroll-behavior: smooth;
+    /* Desplazamiento suave al hacer clic en el menú */
+    scroll-padding-top: 215px;
+    /* Ajuste milimétrico (215px) para que el título quede justo al borde sin dejar espacios vacíos */
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    /* Define el tipo de letra principal utilizando la fuente moderna Montserrat desde Google Fonts */
+    margin: 0;
+    /* Elimina el margen exterior por defecto del navegador */
+    background-color: #fcf8f2;
+    /* Color base por si la imagen tiene transparencias */
+    background-image: url('img/patron_chileno_fondo.png');
+    background-repeat: repeat;
+    /* Patrón de fondo chileno sutil */
+    color: #2b2b2b;
+    /* Define el color base del texto */
+}
+
+/* ===== CONTENEDOR GENERAL ===== */
+.contenedor {
+    width: 90%;
+    /* Permite que el contenido se adapte al ancho de la pantalla */
+    max-width: 1300px;
+    /* Limita el ancho máximo del contenido para que no se vea demasiado extendido */
+    margin: 0 auto;
+    /* Centra horizontalmente el bloque en la página */
+}
+
+/* ===== BARRA SUPERIOR FIJA ===== */
+.barra-superior {
+    position: sticky;
+    /* Mantiene visible el encabezado y el menú al hacer scroll */
+    top: 0;
+    /* Lo fija en la parte superior de la ventana */
+    z-index: 1000;
+    /* Evita que otros elementos se superpongan por encima */
+}
+
+/* ===== ENCABEZADO ===== */
+header {
+    background: linear-gradient(135deg, #8B0000, #5e0b0b);
+    /* Aplica un fondo degradado rojo oscuro */
+    color: white;
+    /* Define texto en color blanco */
+    padding: 15px 20px;
+    /* Reducimos el padding vertical para acomodar fotos más grandes sin que la barra crezca tanto */
+    text-align: center;
+    /* Centra el contenido dentro del encabezado */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    /* Añade una sombra suave para destacar el encabezado */
+    border-bottom: 5px solid #c99a2e;
+    margin-bottom: 0;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    /* Aplica una fuente elegante y clásica al título general */
+    margin: 0;
+    /* Elimina el margen por defecto del título principal */
+    font-size: 2.5rem;
+    /* Aumenta el tamaño del texto del título */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor flexible para el encabezado con imágenes */
+.encabezado-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    /* Espacio entre las imágenes y el texto */
+}
+
+.icono-header {
+    height: 100px;
+    /* Aumentamos drásticamente la altura para que las fotos se vean enormes y claras */
+    width: auto;
+    /* Mantiene la proporción original de la foto (sin estirarla) */
+    border-radius: 8px;
+    /* Pequeño redondeo para suavizar bordes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    /* Sombra un poco más fuerte para darle más presencia */
+    transition: transform 0.3s ease;
+    /* Transición suave para el efecto hover */
+    opacity: 0.9;
+}
+
+.icono-header:hover {
+    transform: scale(1.1);
+    /* Efecto sutil de aumento al pasar el ratón por la imagen */
+}
+
+/* ===== MENÚ DE NAVEGACIÓN ===== */
+nav {
+    background-color: #1a1a1a;
+    /* Define un fondo oscuro para el menú */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    /* Añade una sombra sutil debajo del menú */
+}
+
+nav .contenedor {
+    display: flex;
+    /* Activa el modelo de distribución flexible */
+    justify-content: center;
+    /* Centra horizontalmente el contenido del menú */
+}
+
+nav ul {
+    list-style: none;
+    /* Elimina los puntos de la lista */
+    margin: 0;
+    /* Elimina el margen externo */
+    padding: 0;
+    /* Elimina el relleno interno */
+    display: flex;
+    /* Organiza los elementos en fila */
+    flex-wrap: wrap;
+    /* Permite que los enlaces bajen a otra línea si no caben */
+    justify-content: center;
+    /* Centra los enlaces dentro del menú */
+}
+
+nav li {
+    margin: 0;
+    /* Evita espacios extra entre elementos de lista */
+}
+
+nav a {
+    display: block;
+    /* Convierte el enlace en bloque para ampliar el área clickeable */
+    color: white;
+    /* Define el color del texto del enlace */
+    text-decoration: none;
+    /* Elimina el subrayado por defecto */
+    padding: 10px 14px;
+    /* SE REDUJO el padding para hacer la franja negra mucho más delgada */
+    font-size: 0.95rem;
+    /* Texto ligeramente más pequeño para intentar que todo quepa en una sola fila */
+    font-weight: bold;
+    /* Resalta visualmente el texto */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Suaviza el cambio de color al pasar el mouse */
+}
+
+nav a:hover {
+    background-color: #8B0000;
+    /* Cambia el fondo del enlace al pasar el cursor */
+    color: #f7d27a;
+    /* Cambia el color del texto del enlace al pasar el cursor */
+}
+
+/* ===== TÍTULOS Y TEXTOS ===== */
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #8B0000;
+    border-left: 6px solid #c99a2e;
+    padding-left: 12px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    color: #333333;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* ===== LISTAS ===== */
+ul li {
+    margin-bottom: 8px;
+}
+
+dl dt {
+    font-weight: bold;
+    color: #5e0b0b;
+    margin-top: 12px;
+}
+
+dl dd {
+    margin-left: 18px;
+    margin-bottom: 10px;
+}
+
+/* ===== IMÁGENES ===== */
+img {
+    border-radius: 10px;
+    margin: 10px 10px 10px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.contenedor-imagenes-plato {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.contenedor-imagenes-plato img {
+    width: 45%;
+    max-width: 350px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contenedor-imagenes-plato img:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* ===== MULTIMEDIA ===== */
+audio {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==========================================================================
+   INICIO DE ESTRUCTURA CSS GRID (MOBILE FIRST)
+   ========================================================================== */
+
+/* 
+  CONTENEDOR PRINCIPAL <MAIN> (GRID CONTAINER)
+  Aquí se establece el modelo bidimensional de cuadrícula.
+*/
+main {
+    /* 1. Activa CSS Grid */
+    display: grid; 
+    
+    /* 2. MOBILE FIRST: Definimos una sola columna que ocupa todo el ancho */
+    grid-template-columns: minmax(0, 1fr); 
+    
+    /* 3. Definimos separación estándar entre secciones */
+    gap: 30px; 
+    
+    justify-items: stretch;
+    align-items: start; 
+
+    /* Estilos visuales del contenedor */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 0%, rgba(253, 246, 237, 0.40) 100%);
+    margin: 40px auto;
+    padding: 40px 50px;
+    border: 1px solid rgba(201, 154, 46, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    width: 90%;
+    max-width: 1300px;
+    box-sizing: border-box;
+
+    /* 4. DEFINICIÓN DE ÁREAS (GRID-TEMPLATE-AREAS) PARA MOBILE FIRST */
+    /* Apilamiento vertical estricto respetando los 10 IDs existentes en el HTML */
+    grid-template-areas: 
+        "quienes"
+        "platos"
+        "bebidas"
+        "postres"
+        "especialidades"
+        "promociones"
+        "plato-semana"
+        "videos"
+        "acceso"
+        "registro";
+}
+
+/* GRID ITEMS: Configuración base para cada celda/sección */
+section {
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    height: auto; 
+}
+
+section:hover {
+    transform: translateY(-2px);
+}
+
+/* 5. ASIGNACIÓN ESTRICTA DE GRID AREAS A LOS IDs EXISTENTES */
+#quienes { grid-area: quienes; }
+#platos { grid-area: platos; }
+#bebidas { grid-area: bebidas; }
+#postres { grid-area: postres; }
+#especialidades { grid-area: especialidades; }
+#promociones { grid-area: promociones; }
+#plato-semana { grid-area: plato-semana; }
+#videos { grid-area: videos; }
+#acceso { grid-area: acceso; }
+#registro { grid-area: registro; }
+
+
+/* SECCIÓN QUIÉNES SOMOS (Estilos específicos) */
+#quienes {
+    background-color: #fcf4eb;
+    border-left: 5px solid #8B0000;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#quienes h2 {
+    color: #d15a24;
+    font-size: 2.2rem;
+    border-bottom: 2px dashed #d15a24;
+    padding-bottom: 10px;
+    border-left: 6px solid #c99a2e;
+    padding-left: 12px;
+}
+
+#quienes p {
+    color: #3b312b;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+
+/* ===== FORMULARIOS (Acceso y Registro) ===== */
+form {
+    margin: 10px auto 0;
+    background-color: #faf7f2;
+    padding: 45px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e4e4e4;
+    color: #2b2b2b;
+    position: relative;
+    overflow: hidden;
+}
+
+form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #8B0000, #c99a2e);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #5e0b0b;
+    letter-spacing: 0.5px;
+}
+
+.grupo-campo {
+    margin-bottom: 25px;
+}
+
+.campo-entrada {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: inherit;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.campo-entrada:focus {
+    background-color: #ffffff;
+    border-color: #c99a2e;
+    box-shadow: 0 0 0 4px rgba(201, 154, 46, 0.15);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+    color: #333333;
+}
+
+textarea.campo-entrada {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+#form-registro {
+    max-width: 100%; /* Grid controlará el tamaño */
+}
+
+#form-acceso {
+    max-width: 100%;
+}
+
+.radio-group {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px solid #cccccc;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    transition: border-color 0.3s ease;
+}
+
+.radio-group:hover {
+    border-color: #cccccc;
+}
+
+.radio-group input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #8B0000;
+}
+
+.radio-group label {
+    display: inline-block;
+    font-weight: 500;
+    margin: 0;
+    color: #444444;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primario {
+    width: 100%;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #8B0000, #5e0b0b);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-primario:hover {
+    background: linear-gradient(135deg, #a50000, #7a0e0e);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.45);
+}
+
+.btn-primario:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(139, 0, 0, 0.3);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+footer {
+    background-color: #1f1f1f;
+    color: #f7f3ee;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top: 6px solid #8B0000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer h3 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+    color: #f7d27a;
+    font-size: 1.8rem;
+}
+
+.footer-texto {
+    margin: 8px 0;
+    color: #cccccc;
+}
+
+.footer-separador {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 25px auto;
+    max-width: 50%;
+}
+
+.footer-copy {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #999999;
+}
+
+.footer-credito {
+    color: #666666;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVE WEB DESIGN AVANZADO
+   ========================================================================== */
+
+/* 1. DISPOSITIVOS MÓVILES (Smartphones en vertical, max-width: 767px) */
+@media screen and (max-width: 767px) {
+    html {
+        scroll-padding-top: 20px;
+    }
+
+    .barra-superior {
+        position: static;
+    }
+
+    .encabezado-flex {
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px 5px;
+    }
+
+    .icono-header {
+        display: none;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+
+    nav a {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0;
+        /* El Grid sigue siendo 1fr, no se cambia */
+    }
+
+    form {
+        margin: 10px 0;
+        padding: 25px 20px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .btn-primario {
+        padding: 16px;
+        font-size: 1.1rem;
+    }
+}
+
+/* 2. TABLETS (Pantallas medianas, min-width: 768px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Evolución de la grilla a 2 columnas */
+    main {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 Columnas idénticas con límite de desbordamiento */
+        
+        /* Reasignamos las áreas para aprovechar el ancho */
+        grid-template-areas: 
+            "quienes quienes"          /* Fila 1: Ocupa ambas columnas */
+            "platos bebidas"           /* Fila 2: Una a cada lado */
+            "postres especialidades"   /* Fila 3: Una a cada lado */
+            "promociones promociones"  /* Fila 4: Ocupa todo el ancho */
+            "plato-semana plato-semana"/* Fila 5: Ocupa todo el ancho */
+            "videos videos"            /* Fila 6: Ocupa todo el ancho */
+            "acceso registro";         /* Fila 7: Formularios uno al lado del otro */
+    }
+}
+
+/* 3. ESCRITORIO (Pantallas grandes, min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    /* Evolución de la grilla a 3 columnas para un diseño mucho más profesional y asimétrico */
+    main {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 Columnas idénticas que no rompen el layout */
+        gap: 35px; /* Más respiro visual en escritorio */
+        
+        /* Distribuimos inteligentemente las áreas de la grilla */
+        grid-template-areas: 
+            "quienes quienes quienes"           /* Fila 1: Título y descripción ocupan 100% */
+            "platos bebidas postres"            /* Fila 2: Los 3 menús principales en la misma fila */
+            "especialidades especialidades promociones" /* Fila 3: Especialidades toma 2 celdas, promo 1 */
+            "plato-semana plato-semana videos"  /* Fila 4: Plato destacado toma 2 celdas, video 1 */
+            "acceso registro registro";         /* Fila 5: Acceso toma 1 celda, registro (más grande) toma 2 */
+    }
+
+    /* Ajustamos el tamaño del iframe del video para que llene bien su nueva celda compacta */
+    #videos iframe {
+        height: 350px; 
+    }
+    
+    /* El contenedor de imágenes del plato de la semana necesita ajustarse en escritorio */
+    .contenedor-imagenes-plato {
+        justify-content: flex-start;
+    }
+}
+
+/* ==========================================================================
+   4. ESTILOS DE IMPRESIÓN (Blanco y Negro / Ahorro de tinta)
+   ========================================================================== */
+@media print {
+    /* Fuerza a TODOS los elementos a ser blanco y negro */
+    * {
+        color: black !important;
+        background: transparent !important;
+        background-color: white !important;
+        border-color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Las imágenes se imprimen en escala de grises para ahorrar tinta de color */
+    img {
+        filter: grayscale(100%) !important;
+    }
+
+    /* Ocultar elementos innecesarios al imprimir (navegación, videos, formularios) */
+    .barra-superior, nav, #videos, #acceso, #registro {
+        display: none !important;
+    }
+
+    /* Asegurar que las tablas se impriman con bordes visibles */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid black !important;
+        color: black !important;
+        background-color: white !important;
+    }
+
+    /* Forzar diseño vertical simple (romper la cuadrícula compleja) para que las hojas se impriman ordenadas */
+    main {
+        display: block !important;
+    }
+
+    section {
+        page-break-inside: avoid; /* Evitar que una sección se corte por la mitad en dos hojas */
+        margin-bottom: 20px;
+    }
+}

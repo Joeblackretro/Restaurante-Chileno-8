@@ -1,0 +1,413 @@
+<!DOCTYPE html> <!-- Indica al navegador que el documento está escrito en HTML5 -->
+<html lang="es"> <!-- Elemento raíz del documento; define que el idioma principal es español -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Permite mostrar correctamente tildes, eñes y caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la página se adapte mejor a distintos tamaños de pantalla -->
+    <meta name="description" content="Página web de un restaurante de gastronomía chilena">
+    <!-- Describe brevemente el contenido del sitio -->
+    <meta name="author" content="Juan Saavedra Fica">
+    <!-- Identifica al autor del documento -->
+    <meta name="keywords" content="restaurante chileno, gastronomía chilena, platos típicos, comida tradicional">
+    <!-- Define palabras clave relacionadas con el contenido del sitio -->
+    <meta name="robots" content="index, follow">
+    <!-- Permite indexar la página y seguir enlaces -->
+    <title>Restaurante Sabores de Chile</title>
+    <!-- Título que aparece en la pestaña del navegador -->
+
+    <!-- Vínculos a Google Fonts para integrar tipografías modernas y elegantes (CSS3) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Vínculo al CSS externo para el diseño de las tablas -->
+    <link rel="stylesheet" href="tablas.css">
+
+    <link rel="stylesheet" href="promociones.css">
+    <link rel="stylesheet" href="responsive-grid.css">
+</head>
+
+<body>
+    <!-- BLOQUE SUPERIOR FIJO: contiene el título del sitio y el menú -->
+    <div class="barra-superior">
+
+        <header>
+            <!-- Encabezado principal del sitio -->
+            <div class="contenedor encabezado-flex">
+                <!-- Imagen izquierda -->
+                <img src="img/bandera.png" alt="Bandera de Chile" class="icono-header">
+
+                <h1>Restaurante Sabores de Chile</h1>
+                <!-- Título principal visible para el usuario -->
+
+                <!-- Imagen derecha -->
+                <img src="img/cueca.png" alt="Pareja bailando cueca" class="icono-header">
+            </div>
+        </header>
+
+        <nav>
+            <!-- Menú de navegación interna con anclas -->
+            <div class="contenedor">
+                <ul>
+                    <li><a href="#quienes">Quiénes somos</a></li>
+                    <!-- Enlace interno a la sección de presentación -->
+                    <li><a href="#platos">Platos</a></li>
+                    <!-- Enlace interno a la sección de platos -->
+                    <li><a href="#bebidas">Bebidas</a></li>
+                    <!-- Enlace interno a la sección de bebidas -->
+                    <li><a href="#postres">Postres</a></li>
+                    <!-- Enlace interno a la sección de postres -->
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <!-- Enlace interno a la sección de especialidades -->
+                    <li><a href="#promociones">Promociones</a></li>
+                    <!-- Enlace interno a la sección de promociones -->
+                    <li><a href="#plato-semana">Plato de la semana</a></li>
+                    <!-- Enlace interno a la sección destacada -->
+                    <li><a href="#videos">Videos relacionados</a></li>
+                    <!-- Enlace interno a la sección multimedia con iframe -->
+                    <li><a href="#acceso">Acceso</a></li>
+                    <!-- Enlace interno al formulario de acceso -->
+                    <li><a href="#registro">Registro</a></li>
+                    <!-- Enlace interno al formulario de registro -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- SE INICIA MAIN (Actividad 1) -->
+    <main>
+
+        <!-- SECCIÓN QUIÉNES SOMOS -->
+        <section id="quienes">
+            <h2>Quiénes somos</h2>
+            <p>
+                Somos un restaurante enfocado en rescatar los sabores tradicionales de la gastronomía chilena,
+                entregando una experiencia culinaria auténtica a cada uno de nuestros visitantes.
+            </p>
+            <p>
+                Nuestro objetivo es ofrecer platos típicos preparados con ingredientes frescos, recetas tradicionales
+                y una atención cercana, resaltando la identidad gastronómica de Chile.
+            </p>
+        </section>
+
+        <!-- SECCIÓN PLATOS -->
+        <section id="platos">
+            <h2>Platos</h2>
+            <table>
+                <caption class="sr-only">Menú de Platos Típicos Chilenos</caption>
+                <!-- caption describe la tabla semánticamente para accesibilidad -->
+                <thead>
+                    <!-- thead agrupa los encabezados de la tabla -->
+                    <tr>
+                        <!-- tr representa una fila -->
+                        <th>Plato</th>
+                        <!-- th representa una celda de encabezado -->
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- tbody agrupa el contenido principal de la tabla -->
+                    <tr>
+                        <td>Empanada</td>
+                        <!-- td representa una celda de datos -->
+                        <td>Carne, cebolla y especias</td>
+                        <td>$2.500</td>
+                    </tr>
+                    <tr>
+                        <td>Pastel de choclo</td>
+                        <td>Preparación tradicional chilena</td>
+                        <td>$6.500</td>
+                    </tr>
+                    <tr>
+                        <td>Cazuela</td>
+                        <td>Sopa con verduras y carne</td>
+                        <td>$5.800</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN BEBIDAS -->
+        <section id="bebidas">
+            <h2>Bebidas</h2>
+            <table>
+                <caption class="sr-only">Menú de Bebidas Típicas</caption>
+                <thead>
+                    <tr>
+                        <th>Bebida</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mote con huesillo</td>
+                        <td>Bebida tradicional chilena</td>
+                        <td>$3.000</td>
+                    </tr>
+                    <tr>
+                        <td>Terremoto</td>
+                        <td>Bebida típica chilena</td>
+                        <td>$5.000</td>
+                    </tr>
+                    <tr>
+                        <td>Jugo natural</td>
+                        <td>Frutas frescas</td>
+                        <td>$4.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN POSTRES -->
+        <section id="postres">
+            <h2>Postres</h2>
+            <table>
+                <caption class="sr-only">Menú de Postres Tradicionales</caption>
+                <thead>
+                    <tr>
+                        <th>Postre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Leche asada</td>
+                        <td>Postre casero</td>
+                        <td>$3.500</td>
+                    </tr>
+                    <tr>
+                        <td>Torta mil hojas</td>
+                        <td>Capas de masa con manjar</td>
+                        <td>$6.000</td>
+                    </tr>
+                    <tr>
+                        <td>Suspiro limeño</td>
+                        <td>Dulce tradicional de textura cremosa</td>
+                        <td>$5.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN ESPECIALIDADES -->
+        <section id="especialidades">
+            <h2>Especialidades de la casa</h2>
+            <dl>
+                <!-- dl crea una lista descriptiva -->
+                <dt>Curanto</dt>
+                <!-- dt define el término principal -->
+                <dd>Preparación tradicional con mariscos y carnes. Precio: $12.000</dd>
+                <!-- dd contiene la descripción del término -->
+                <dt>Asado al palo</dt>
+                <dd>Carne cocinada lentamente al fuego, resaltando su sabor y textura. Precio: $10.500</dd>
+            </dl>
+        </section>
+
+        <!-- SECCIÓN PROMOCIONES -->
+        <section id="promociones">
+            <h2>Promociones especiales</h2>
+            <ul>
+                <!-- ul crea una lista no ordenada -->
+                <li>10% de descuento en platos seleccionados.</li>
+                <li>Bebida gratis en menú ejecutivo.</li>
+                <li>2x1 en postres los días miércoles.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN PLATO DE LA SEMANA -->
+        <section id="plato-semana">
+            <h2>Plato de la semana</h2>
+            <p>
+                El pastel de choclo es uno de los platos más representativos de Chile, combinando sabores
+                dulces y salados en una preparación tradicional muy valorada dentro de la cocina nacional.
+            </p>
+
+            <p><strong>Precio del plato de la semana: $6.500</strong></p>
+            <!-- strong resalta visualmente el precio -->
+
+            <!-- CONTENEDOR NUEVO PARA IMÁGENES -->
+            <div class="contenedor-imagenes-plato">
+                <img src="img/pastel1.png" alt="Pastel de choclo servido">
+                <!-- img inserta una imagen; src indica la ruta, alt describe el contenido -->
+                <img src="img/pastel2.png" alt="Preparación del pastel de choclo">
+                <!-- Segunda imagen relacionada con el plato de la semana -->
+            </div>
+
+            <audio controls>
+                <!-- audio permite insertar sonido; controls muestra los botones del reproductor -->
+                <source src="audio/audio.mp3" type="audio/mpeg">
+                <!-- source define la ruta del archivo y su tipo -->
+                Tu navegador no soporta audio.
+            </audio>
+
+            <p>
+                Para complementar la información sobre este plato típico chileno,
+                también se puede revisar el siguiente recurso externo:
+                <a href="https://es.wikipedia.org/wiki/Pastel_de_choclo" target="_blank">
+                    Ver información del pastel de choclo
+                </a>
+                <!-- a crea un enlace; href indica la dirección y target="_blank" abre en otra pestaña -->
+            </p>
+        </section>
+        <!-- SECCIÓN VIDEOS RELACIONADOS -->
+        <section id="videos">
+            <h2>Videos relacionados</h2>
+            <p>
+                En esta sección se incorpora un video de YouTube sobre la preparación de un plato típico chileno,
+                con el propósito de complementar la información gastronómica del restaurante.
+            </p>
+            <!-- 
+            iframe permite incrustar contenido externo dentro de la página web.
+            src contiene la URL del video en formato embed proporcionado por YouTube.
+            title describe el contenido del video, mejorando la accesibilidad.
+            allow habilita funciones del reproductor como reproducción multimedia.
+            allowfullscreen permite visualizar el video en pantalla completa.
+        -->
+            <iframe src="https://www.youtube.com/embed/9S_6HG85_u0" title="Preparación de plato típico chileno"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        <!-- FORMULARIO DE ACCESO -->
+        <section id="acceso">
+            <h2>Formulario de acceso</h2>
+            <p>
+                Este formulario permite que un usuario ya registrado pueda ingresar a la página mediante su nombre
+                de usuario y contraseña.
+            </p>
+
+            <form id="form-acceso" onsubmit="mostrarMensaje(event)">
+                <!-- Se agregó ID "form-acceso" para especificidad CSS -->
+                <div class="grupo-campo">
+                    <label for="usuario">Nombre de usuario:</label>
+                    <!-- Se agregó la clase "campo-entrada" -->
+                    <input type="text" id="usuario" name="usuario" class="campo-entrada"
+                        placeholder="Ingrese su nombre de usuario" required minlength="4" maxlength="20">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="clave">Contraseña:</label>
+                    <!-- Se agregó la clase "campo-entrada" -->
+                    <input type="password" id="clave" name="clave" class="campo-entrada"
+                        placeholder="Ingrese su contraseña" required>
+                </div>
+
+                <!-- Se agregó la clase "btn-primario" -->
+                <button type="submit" class="btn-primario">Enviar</button>
+            </form>
+        </section>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <section id="registro">
+            <h2>Formulario de registro de nuevos usuarios</h2>
+            <p>
+                Este formulario permite registrar nuevos clientes solicitando información personal básica,
+                utilizando distintos tipos de campos según la naturaleza del dato requerido.
+            </p>
+
+            <form id="form-registro" onsubmit="mostrarMensaje(event)">
+                <!-- Formulario con ID para diseño específico por CSS -->
+
+                <div class="grupo-campo">
+                    <label for="nombre_apellido">Nombre y apellido:</label>
+                    <input type="text" id="nombre_apellido" name="nombre_apellido" class="campo-entrada"
+                        placeholder="Ingrese su nombre y apellido" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="tipo_documento">Tipo de documento:</label>
+                    <select id="tipo_documento" name="tipo_documento" class="campo-entrada" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="dni">DNI</option>
+                        <option value="rut">RUT</option>
+                        <option value="cedula">Cédula</option>
+                        <option value="pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="numero_documento">Número de documento:</label>
+                    <input type="text" id="numero_documento" name="numero_documento" class="campo-entrada"
+                        placeholder="Ingrese su número de documento" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="campo-entrada" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Sexo:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="masculino" name="sexo" value="masculino" required>
+                        <label for="masculino">Masculino</label>
+                        <input type="radio" id="femenino" name="sexo" value="femenino">
+                        <label for="femenino">Femenino</label>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" class="campo-entrada"
+                        placeholder="Ingrese su correo electrónico" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="telefono">Teléfono móvil:</label>
+                    <input type="tel" id="telefono" name="telefono" class="campo-entrada" pattern="[0-9]{9}"
+                        placeholder="Ej: 912345678" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" class="campo-entrada" rows="5"
+                        placeholder="Escriba aquí sus comentarios o consultas"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primario">Registrar</button>
+            </form>
+        </section>
+
+    </main>
+    <!-- FIN MAIN -->
+
+    <!-- ===== PIE DE PÁGINA ===== -->
+    <!-- Elemento estructural semántico de HTML5 para cerrar el documento y entregar datos de contacto -->
+    <footer>
+        <div class="contenedor">
+            <h3>Restaurante Sabores de Chile</h3>
+            <p class="footer-texto">📍 Dirección Ficticia 1234, Barrio Gastronómico, Santiago</p>
+            <p class="footer-texto">📞 Contacto: +56 9 1234 5678 | ✉️ reservas@saboresdechile.cl</p>
+
+            <!-- Separador visual sencillo -->
+            <hr class="footer-separador">
+
+            <p class="footer-copy">
+                &copy; 2026 Restaurante Sabores de Chile. Todos los derechos reservados.<br>
+                <!-- Comprobante académico para validación de la tarea -->
+                <strong class="footer-credito">Sitio desarrollado
+                    como proyecto académico para Programación Web I - IACC</strong>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarMensaje(event) {
+            event.preventDefault(); // evita que el formulario se envíe y genere error 405         
+            alert("Formulario enviado correctamente. Enviado a autorizar a Juan Saavedra.");
+            // muestra un mensaje al usuario confirmando el envío
+            event.target.reset();
+            // limpia todos los campos del formulario para permitir ingresar nuevos datos
+            return false;
+            // evita que el navegador continúe con el comportamiento por defecto
+        }
+    </script>
+</body>
+
+</html>

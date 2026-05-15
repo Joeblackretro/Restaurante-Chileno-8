@@ -1,0 +1,157 @@
+/* tablas.css */
+/* ===== TABLAS (Platos, Bebidas, Postres) ===== */
+
+/* Estilos generales para las tablas del menú */
+table {
+    width: 100%;
+    /* La tabla utiliza todo el ancho del contenedor */
+    border-collapse: collapse;
+    /* Se eliminan los espacios dobles entre los bordes de las celdas */
+    margin-top: 20px;
+    /* Separación superior para no quedar pegado al título */
+    background-color: #ffffff;
+    /* Fondo blanco para las tablas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* Sombra suave para dar efecto de elevación (profundidad) */
+    border-radius: 10px;
+    /* Bordes redondeados en las esquinas de la tabla */
+    overflow: hidden;
+    /* Oculta todo lo que sobresalga de la curva del borde */
+}
+
+/* Clase de utilidad para accesibilidad (ocultar captions sin display:none) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Estilos para encabezados de tabla (títulos de columnas) */
+th {
+    background-color: #5e0b0b;
+    /* Fondo color concho de vino, identificativo del sitio */
+    color: #ffffff;
+    /* Texto blanco para asegurar alto contraste */
+    text-align: left;
+    /* Alineación del texto a la izquierda */
+    padding: 15px;
+    /* Margen interno amplio para respirabilidad */
+    font-weight: bold;
+    /* Grosor de fuente destacado */
+    text-transform: uppercase;
+    /* Convierte el texto en mayúsculas para más formalidad */
+    letter-spacing: 1px;
+    /* Añade espacio entre las letras */
+}
+
+/* Estilos para celdas de datos */
+td {
+    padding: 16px 20px;
+    /* Espaciado interno, arriba/abajo y lados */
+    border-bottom: 1px solid #eeeeee;
+    /* Línea separadora sutil en gris claro */
+    color: #444444;
+    /* Color de texto gris oscuro pero no totalmente negro */
+}
+
+/* Efecto cebra para las filas del cuerpo (tbody), para las filas pares (even) */
+tbody tr:nth-child(even) {
+    background-color: #fcfbf9;
+    /* Color de fondo ligeramente crema para filas intercaladas */
+}
+
+/* Efecto hover (al pasar el ratón) para las filas */
+tbody tr:hover {
+    background-color: #f4ebd8;
+    /* Cambio a un tono café-crema para interacción dinámica */
+    transition: background-color 0.3s ease;
+    /* Transición suave en el cambio de color */
+}
+
+/* Ajuste para evitar que las tablas desborden la cuadrícula en pantallas de escritorio */
+@media screen and (min-width: 1024px) {
+    table {
+        table-layout: fixed;
+        word-wrap: break-word;
+    }
+    th, td {
+        padding: 12px 10px; /* Reducimos levemente el relleno para que entren 3 tablas lado a lado */
+        font-size: 0.95rem;
+    }
+    
+    /* Distribuir el ancho de las columnas inteligentemente */
+    th:nth-child(1), td:nth-child(1) { width: 32%; } /* Columna de nombre */
+    th:nth-child(2), td:nth-child(2) { width: 45%; } /* Columna de descripción (necesita más espacio) */
+    th:nth-child(3), td:nth-child(3) { width: 23%; } /* Columna de precio (necesita poco espacio) */
+}
+
+/* ===== DISEÑO RESPONSIVO PARA TABLAS ===== */
+/* ===== DISEÑO RESPONSIVO PARA TABLAS (Tarjetas Apiladas) ===== */
+/* Esta es la técnica definitiva para móviles: transforma la tabla en "tarjetas" individuales para que jamás se desborde, sin importar lo estrecha que sea la pantalla vertical. */
+@media screen and (max-width: 768px) {
+
+    /* Forzamos a todos los elementos de la tabla a comportarse como bloques (apilables) */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        /* El padding no sumará ancho extra */
+    }
+
+    /* Ocultamos la cabecera tradicional ya que los datos serán auto-explicativos por su diseño */
+    thead {
+        display: none;
+    }
+
+    /* Cada fila (tr) se convierte en una "Tarjeta" visual */
+    tr {
+        margin-bottom: 20px;
+        border: 2px solid #e0d5c1;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        background-color: #ffffff;
+        overflow: hidden;
+        /* Mantiene los bordes redondeados limpios */
+    }
+
+    /* Las celdas (td) se apilan una debajo de la otra dentro de la tarjeta */
+    td {
+        padding: 15px;
+        text-align: center;
+        /* Centrado para mejor lectura en teléfono vertical */
+        border-bottom: 1px solid #f0e9dc;
+        font-size: 1rem;
+    }
+
+    /* Damos estilo de "Título" a la primera celda (Nombre del plato/bebida) */
+    td:first-child {
+        font-weight: bold;
+        font-size: 1.2rem;
+        background-color: #5e0b0b;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* La segunda celda (Descripción) la dejamos normal */
+
+    /* Damos estilo de "Precio Destacado" a la última celda */
+    td:last-child {
+        border-bottom: none;
+        /* Quitamos la línea de la última celda */
+        font-weight: bold;
+        color: #8B0000;
+        font-size: 1.3rem;
+        background-color: #fdfaf5;
+    }
+}
