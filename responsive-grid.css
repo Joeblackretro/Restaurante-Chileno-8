@@ -562,7 +562,7 @@ footer h3 {
 /* 1. DISPOSITIVOS MÓVILES (Smartphones en vertical, max-width: 767px) */
 @media screen and (max-width: 767px) {
     html {
-        scroll-padding-top: 235px;
+        scroll-padding-top: 110px;
     }
 
     .barra-superior {
@@ -572,14 +572,14 @@ footer h3 {
     }
 
     header {
-        padding: 10px 12px;
+        padding: 8px 10px;
     }
 
     .encabezado-flex {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 6px;
+        gap: 4px;
     }
 
     .icono-header {
@@ -587,9 +587,9 @@ footer h3 {
     }
 
     header h1 {
-        font-size: 1.55rem;
+        font-size: 1.4rem;
         line-height: 1.2;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
     }
 
     nav .contenedor {
@@ -598,29 +598,30 @@ footer h3 {
 
     nav ul {
         flex-direction: row;
-        flex-wrap: wrap;
-        align-items: stretch;
-        justify-content: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        align-items: center;
         width: 100%;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
     }
 
     nav li {
-        flex: 1 1 50%;
-        width: auto;
-        box-sizing: border-box;
+        flex: 0 0 auto;
     }
 
     nav a {
-        text-align: center;
-        padding: 10px 6px;
-        font-size: 0.85rem;
-        line-height: 1.2;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        box-sizing: border-box;
+        white-space: nowrap;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        border-top: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        display: block;
     }
 
     main {
