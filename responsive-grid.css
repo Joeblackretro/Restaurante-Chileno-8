@@ -562,7 +562,7 @@ footer h3 {
 /* 1. DISPOSITIVOS MÓVILES (Smartphones en vertical, max-width: 767px) */
 @media screen and (max-width: 767px) {
     html {
-        scroll-padding-top: 210px;
+        scroll-padding-top: 240px;
     }
 
     .barra-superior {
@@ -572,14 +572,14 @@ footer h3 {
     }
 
     header {
-        padding: 6px 8px;
+        padding: 4px 6px;
     }
 
     .encabezado-flex {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 4px;
+        gap: 2px;
     }
 
     .icono-header {
@@ -587,8 +587,8 @@ footer h3 {
     }
 
     header h1 {
-        font-size: 1.3rem;
-        line-height: 1.2;
+        font-size: 1.15rem;
+        line-height: 1.1;
         letter-spacing: 0;
     }
 
@@ -613,21 +613,16 @@ footer h3 {
 
     nav a {
         text-align: center;
-        padding: 8px 4px;
-        font-size: 0.85rem;
-        line-height: 1.2;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
-        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 6px 2px;
+        font-size: 0.8rem;
+        line-height: 1.1;
+        border: none;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
         box-sizing: border-box;
         white-space: normal;
-    }
-
-    nav li:nth-child(even) a {
-        border-right: none;
     }
 
     main {
