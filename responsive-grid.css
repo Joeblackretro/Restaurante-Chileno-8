@@ -130,8 +130,8 @@ nav ul {
     justify-content: center;
     /* Centra los enlaces dentro del menú */
     align-items: center;
-/* Alinea los enlaces en el eje transversal */
- gap: 0;
+    /* Alinea los enlaces en el eje transversal */
+    gap: 0;
 }
 
 nav li {
@@ -283,16 +283,16 @@ iframe {
 */
 main {
     /* 1. Activa CSS Grid */
-    display: grid; 
-    
+    display: grid;
+
     /* 2. MOBILE FIRST: Definimos una sola columna que ocupa todo el ancho */
-    grid-template-columns: minmax(0, 1fr); 
-    
+    grid-template-columns: minmax(0, 1fr);
+
     /* 3. Definimos separación estándar entre secciones */
-    gap: 30px; 
-    
+    gap: 30px;
+
     justify-items: stretch;
-    align-items: start; 
+    align-items: start;
 
     /* Estilos visuales del contenedor */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 0%, rgba(253, 246, 237, 0.40) 100%);
@@ -307,7 +307,7 @@ main {
 
     /* 4. DEFINICIÓN DE ÁREAS (GRID-TEMPLATE-AREAS) PARA MOBILE FIRST */
     /* Apilamiento vertical estricto respetando los 10 IDs existentes en el HTML */
-    grid-template-areas: 
+    grid-template-areas:
         "quienes"
         "platos"
         "bebidas"
@@ -322,12 +322,12 @@ main {
 
 /* GRID ITEMS: Configuración base para cada celda/sección */
 section {
-    margin: 0; 
+    margin: 0;
     padding: 0;
     width: 100%;
     box-sizing: border-box;
     transition: transform 0.3s ease;
-    height: auto; 
+    height: auto;
 }
 
 section:hover {
@@ -335,16 +335,45 @@ section:hover {
 }
 
 /* 5. ASIGNACIÓN ESTRICTA DE GRID AREAS A LOS IDs EXISTENTES */
-#quienes { grid-area: quienes; }
-#platos { grid-area: platos; }
-#bebidas { grid-area: bebidas; }
-#postres { grid-area: postres; }
-#especialidades { grid-area: especialidades; }
-#promociones { grid-area: promociones; }
-#plato-semana { grid-area: plato-semana; }
-#videos { grid-area: videos; }
-#acceso { grid-area: acceso; }
-#registro { grid-area: registro; }
+#quienes {
+    grid-area: quienes;
+}
+
+#platos {
+    grid-area: platos;
+}
+
+#bebidas {
+    grid-area: bebidas;
+}
+
+#postres {
+    grid-area: postres;
+}
+
+#especialidades {
+    grid-area: especialidades;
+}
+
+#promociones {
+    grid-area: promociones;
+}
+
+#plato-semana {
+    grid-area: plato-semana;
+}
+
+#videos {
+    grid-area: videos;
+}
+
+#acceso {
+    grid-area: acceso;
+}
+
+#registro {
+    grid-area: registro;
+}
 
 
 /* SECCIÓN QUIÉNES SOMOS (Estilos específicos) */
@@ -444,7 +473,8 @@ textarea.campo-entrada {
 }
 
 #form-registro {
-    max-width: 100%; /* Grid controlará el tamaño */
+    max-width: 100%;
+    /* Grid controlará el tamaño */
 }
 
 #form-acceso {
@@ -704,41 +734,57 @@ footer h3 {
 
     /* Evolución de la grilla a 2 columnas */
     main {
-        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 Columnas idénticas con límite de desbordamiento */
-        
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        /* 2 Columnas idénticas con límite de desbordamiento */
+
         /* Reasignamos las áreas para aprovechar el ancho */
-        grid-template-areas: 
-            "quienes quienes"          /* Fila 1: Ocupa ambas columnas */
-            "platos bebidas"           /* Fila 2: Una a cada lado */
-            "postres especialidades"   /* Fila 3: Una a cada lado */
-            "promociones promociones"  /* Fila 4: Ocupa todo el ancho */
-            "plato-semana plato-semana"/* Fila 5: Ocupa todo el ancho */
-            "videos videos"            /* Fila 6: Ocupa todo el ancho */
-            "acceso registro";         /* Fila 7: Formularios uno al lado del otro */
+        grid-template-areas:
+            "quienes quienes"
+            /* Fila 1: Ocupa ambas columnas */
+            "platos bebidas"
+            /* Fila 2: Una a cada lado */
+            "postres especialidades"
+            /* Fila 3: Una a cada lado */
+            "promociones promociones"
+            /* Fila 4: Ocupa todo el ancho */
+            "plato-semana plato-semana"
+            /* Fila 5: Ocupa todo el ancho */
+            "videos videos"
+            /* Fila 6: Ocupa todo el ancho */
+            "acceso registro";
+        /* Fila 7: Formularios uno al lado del otro */
     }
 }
 
 /* 3. ESCRITORIO (Pantallas grandes, min-width: 1024px) */
 @media screen and (min-width: 1024px) {
+
     /* Evolución de la grilla a 3 columnas para un diseño mucho más profesional y asimétrico */
     main {
-        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 Columnas idénticas que no rompen el layout */
-        gap: 35px; /* Más respiro visual en escritorio */
-        
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        /* 3 Columnas idénticas que no rompen el layout */
+        gap: 35px;
+        /* Más respiro visual en escritorio */
+
         /* Distribuimos inteligentemente las áreas de la grilla */
-        grid-template-areas: 
-            "quienes quienes quienes"           /* Fila 1: Título y descripción ocupan 100% */
-            "platos bebidas postres"            /* Fila 2: Los 3 menús principales en la misma fila */
-            "especialidades especialidades promociones" /* Fila 3: Especialidades toma 2 celdas, promo 1 */
-            "plato-semana plato-semana videos"  /* Fila 4: Plato destacado toma 2 celdas, video 1 */
-            "acceso registro registro";         /* Fila 5: Acceso toma 1 celda, registro (más grande) toma 2 */
+        grid-template-areas:
+            "quienes quienes quienes"
+            /* Fila 1: Título y descripción ocupan 100% */
+            "platos bebidas postres"
+            /* Fila 2: Los 3 menús principales en la misma fila */
+            "especialidades especialidades promociones"
+            /* Fila 3: Especialidades toma 2 celdas, promo 1 */
+            "plato-semana plato-semana videos"
+            /* Fila 4: Plato destacado toma 2 celdas, video 1 */
+            "acceso registro registro";
+        /* Fila 5: Acceso toma 1 celda, registro (más grande) toma 2 */
     }
 
     /* Ajustamos el tamaño del iframe del video para que llene bien su nueva celda compacta */
     #videos iframe {
-        height: 350px; 
+        height: 350px;
     }
-    
+
     .galeria-plato {
         flex-direction: row;
         justify-content: flex-start;
@@ -757,6 +803,7 @@ footer h3 {
    4. ESTILOS DE IMPRESIÓN (Blanco y Negro / Ahorro de tinta)
    ========================================================================== */
 @media print {
+
     /* Fuerza a TODOS los elementos a ser blanco y negro */
     * {
         color: black !important;
@@ -773,7 +820,11 @@ footer h3 {
     }
 
     /* Ocultar elementos innecesarios al imprimir (navegación, videos, formularios) */
-    .barra-superior, nav, #videos, #acceso, #registro {
+    .barra-superior,
+    nav,
+    #videos,
+    #acceso,
+    #registro {
         display: none !important;
     }
 
@@ -783,7 +834,8 @@ footer h3 {
         width: 100%;
     }
 
-    th, td {
+    th,
+    td {
         border: 1px solid black !important;
         color: black !important;
         background-color: white !important;
@@ -795,7 +847,8 @@ footer h3 {
     }
 
     section {
-        page-break-inside: avoid; /* Evitar que una sección se corte por la mitad en dos hojas */
+        page-break-inside: avoid;
+        /* Evitar que una sección se corte por la mitad en dos hojas */
         margin-bottom: 20px;
     }
 }
