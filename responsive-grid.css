@@ -562,7 +562,7 @@ footer h3 {
 /* 1. DISPOSITIVOS MÓVILES (Smartphones en vertical, max-width: 767px) */
 @media screen and (max-width: 767px) {
     html {
-        scroll-padding-top: 240px;
+        scroll-padding-top: 200px;
     }
 
     .barra-superior {
@@ -606,15 +606,14 @@ footer h3 {
     }
 
     nav li {
-        flex: 1 1 50%;
-        width: 50%;
+        flex: 1 1 33.33%;
         box-sizing: border-box;
     }
 
     nav a {
         text-align: center;
-        padding: 6px 2px;
-        font-size: 0.8rem;
+        padding: 4px 2px;
+        font-size: 0.75rem;
         line-height: 1.1;
         border: none;
         display: flex;
